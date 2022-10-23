@@ -1,0 +1,48 @@
+BEGIN TRANSACTION;
+
+CREATE TABLE IF NOT EXISTS "usuario" (
+    "cod_usuario"	integer NOT NULL,
+    "nome"	varchar(11) NOT NULL UNIQUE,
+    "idade"	int(3) NOT NULL,
+    "e-mail"	varchar(128) NOT NULL,
+    "endereço"	char(255) NOT NULL,
+    "telefone"	char(14) NOT NULL,
+    PRIMARY KEY("cod_usuario" AUTOINCREMENT)
+);
+
+
+CREATE TABLE IF NOT EXISTS "formacao" (
+    "curso"	varchar(50),
+    "data_de_ inicio" date,
+    "data_de_formacao" date,
+    "instituicao" varchar(50),
+    "cod_usuario" integer NOT NULL,
+    "id" integer NOT NULL unique,
+    PRIMARY KEY("id" AUTOINCREMENT),
+    FOREIGN KEY("cod_usuario") REFERENCES "usuario"("cod_usuario")
+);
+
+CREATE TABLE IF NOT EXISTS "habilidade" (
+    "nome"	varchar(100),
+    "descricao" varchar(50),
+    "cod_usuario" integer NOT NULL,
+    "id" integer NOT NULL unique,
+    PRIMARY KEY("id" AUTOINCREMENT),
+    FOREIGN KEY("cod_usuario") REFERENCES "usuario"("cod_usuario")
+);
+
+CREATE TABLE IF NOT EXISTS "experiencia" (
+    "curso"	varchar(50),
+    "nome_empresa" varchar(100),
+    "descricao" varchar(255),
+    "cargo" varchar(40),
+    "cod_usuario" integer NOT NULL,
+    "id" integer NOT NULL unique,
+    PRIMARY KEY("id" AUTOINCREMENT),
+    FOREIGN KEY("cod_usuario") REFERENCES "usuario"("cod_usuario")
+);
+
+
+
+
+INSERT INTO "usuario" VALUES (504043,"Emely Tavares", 19, "emelytavares@gmail.com", "Rua m.m.d.c, butãnta, 80", "88996100094")
