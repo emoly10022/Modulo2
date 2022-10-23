@@ -1,14 +1,13 @@
-#Atividade Semana 2
+# Atividade Semana 2
 
-###<a href="">Modelo lógico</a>
+### <a href="https://github.com/emoly10022/Modulo2/blob/main/02_AUT_EST_ENTREGA/Semana%202/atividade/modelo%20logico.png">Modelo lógico</a>
+<img src="https://github.com/emoly10022/Modulo2/blob/main/02_AUT_EST_ENTREGA/Semana%202/atividade/modelo%20logico.png?raw=true"> </img>
 
-###<a href="">Modelo Físico
-
-
+### Modelo Físico
 
 BEGIN TRANSACTION;
 
-CREATE TABLE IF NOT EXISTS "usuario" (
+CREATE TABLE IF NOT EXISTS "usuario" (<br />
     "cod_usuario"	integer NOT NULL,<br />
     "nome"	varchar(11) NOT NULL UNIQUE,<br />
     "idade"	int(3) NOT NULL,<br />
@@ -18,7 +17,7 @@ CREATE TABLE IF NOT EXISTS "usuario" (
     PRIMARY KEY("cod_usuario" AUTOINCREMENT)<br />
 );<br />
 
-CREATE TABLE IF NOT EXISTS "formacao" (
+CREATE TABLE IF NOT EXISTS "formacao" (<br />
     "curso"	varchar(50),<br />
     "data_de_ inicio" date,<br />
     "data_de_formacao" date,<br />
@@ -29,7 +28,7 @@ CREATE TABLE IF NOT EXISTS "formacao" (
     FOREIGN KEY("cod_usuario") REFERENCES "usuario"("cod_usuario")<br />
 );<br />
 
-CREATE TABLE IF NOT EXISTS "habilidade" (
+CREATE TABLE IF NOT EXISTS "habilidade" (<br />
     "nome"	varchar(100),<br />
     "descricao" varchar(50),<br />
     "cod_usuario" integer NOT NULL,<br />
@@ -38,7 +37,7 @@ CREATE TABLE IF NOT EXISTS "habilidade" (
     FOREIGN KEY("cod_usuario") REFERENCES "usuario"("cod_usuario")<br />
 );
 
-CREATE TABLE IF NOT EXISTS "experiencia" (
+CREATE TABLE IF NOT EXISTS "experiencia" (<br />
     "curso"	varchar(50),<br />
     "nome_empresa" varchar(100),<br />
     "descricao" varchar(255),<br />
