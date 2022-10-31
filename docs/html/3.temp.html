@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura</title>
+</head>
+
+<body>
+    <div id="main">
+     <h1>Temperatura</h1>
+        <a href="1.lancamento_vertical.html">Lançamento Vertical</a> - <a href="2.pt_max_min.html">Pontos Máx e Mín</a>
+        - <a href="4.consumo.html">Consumo de Energia</a>
+    </div>
+    <select name="tabela" id="escolha">
+        <option value="F">Transforma C para F</option>
+        <option value="C">Transforma F para C</option>
+    </select>
+    <input id="far" type="text" placeholder="Valor da Temperatura">
+    <button onclick="resul_temp();" class="temperatura">resultado</button>
+    <div id="resultado">
+    
+    </div>
+    <script src="../calculos.js"></script>
+</body>
+
+</html>
+
