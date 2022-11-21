@@ -4,7 +4,7 @@ const app = express();
 const hostname = '127.0.0.1';
 const port = 8081;
 const sqlite3 = require('sqlite3').verbose();
-const DBPATH = 'entregaS3/curriculoemelyatv1.db';
+const DBPATH = './curriculoemelyatv1.db';
 
 app.use(express.json());
 app.get('/usuario', function(req, res) {
@@ -65,4 +65,6 @@ app.get('/experiencia', function(req, res) {
 
 
 
-app.listen(port,()=> console.log("O server está rodando: "+hostname));
+app.listen(port, hostname, () => {
+    console.log(`O server está rodando em http://${hostname}:${port}/`);
+});
