@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ATUALIZAÇÃO DE ALUNO</h1>
+        <form name="form2" method="post" action="atualizaAluno">
+            NOME <input type="text" name="nome" id="nome" value="">
+            <br>
+            IDADE <input type="idade" id="idade" name="idade" value="">
+            <br>
+            <input type="hidden" id="id-aluno" name="id-aluno" value="">
+            <input type="submit" value="ATUALIZAR">
+        </form>
+
+        <script>
+            let url = new URL(window.location.href);
+            let params = url.searchParams;
+            url = '/atualizaAluno?id-aluno='+url.searchParams.get("id-aluno");
+            fetch(url)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let alunos = data;
+                alunos.map(function(aluno) {
+                    document.getElementById('id-aluno').value = aluno.id-aluno;
+                    document.getElementById('nome').value = aluno.nome;
+                    document.getElementById('idade').value = aluno.idade;
+                });
+                alert(response.json());
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+        </script>
+</body>
+</html>
