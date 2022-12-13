@@ -9,7 +9,7 @@ const hostname = '127.0.0.1';
 const port = 3004;
 const app = express();
 
-app.use(express.static(".."));
+app.use(express.static("../frontend"));
 /* Definição dos endpoints */
 /******** CRUD ************/
 app.use(express.json());
